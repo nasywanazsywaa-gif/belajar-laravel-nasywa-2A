@@ -1,48 +1,47 @@
 @extends('dashboard')
 
 @section('content')
-    <h1>{{ $judul }}</h1>
+    <h1 style="margin-top: 0; margin-bottom: 12px; color: navy;">{{ $judul }}</h1>
 
-    <p style="margin-bottom: 15px;">
+    <div style="margin-bottom: 16px;">
         <a href="/employe/create">
             <button class="btn-tambah">+ Tambah data Pegawai</button>
         </a>
-    </p>
+    </div>
 
-    <table class="table-crud" border="1" align="center">
+    <table class="table-crud">
         <thead>
             <tr>
-                <th>ID</th>
+                <th style="width: 45px;">ID</th>
                 <th>Nama</th>
                 <th>Alamat</th>
-                <th>Gender</th>
-                <th>Gaji</th>
-                <th>Aksi</th>
+                <th style="width: 60px;">Gender</th>
+                <th style="width: 130px;">Gaji</th>
+                <th style="width: 140px;">Aksi</th>
             </tr>
         </thead>
         <tbody>
             @forelse ($employes as $row)
                 <tr>
-                    <td class="text-center">{{ $row->id }}</td>
-                    <td>{{ $row->nama }}</td>
-                    <td>{{ $row->alamat }}</td>
-                    <td class="text-center">{{ $row->gender }}</td>
-                    <td>{{ is_numeric($row->gaji) ? 'Rp ' . number_format($row->gaji, 0, ',', '.') : $row->gaji }}</td>
-                    <td class="text-center">
-                        <a href="/employe/edit/{{ $row->id }}">
-                            <button class="btn-edit">Edit</button>
-                        </a>
-                        |
-                        <form method="post" action="/employe/{{ $row->id }}" style="display: inline-block;">
-                            @method('delete')
-                            @csrf
-                            <button class="btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus data pegawai ini?')">Delete</button>
-                        </form>
+                    <td class="col-id">{{ $row->id }}</td>
+                    <td class="col-nama">{{ $row->nama }}</td>
+                    <td class="col-alamat">{{ $row->alamat }}</td>
+                    <td class="col-gender">{{ $row->gender }}</td>
+                    <td class="col-gaji">{{ is_numeric($row->gaji) ? 'Rp ' . number_format($row->gaji, 0, ',', '.') : $row->gaji }}</td>
+                    <td class="col-aksi">
+                        <div class="action-group">
+                            <a href="/employe/edit/{{ $row->id }}" class="btn-action btn-edit">Edit</a>
+                            <form method="post" action="/employe/{{ $row->id }}" style="display: inline; margin: 0;">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn-action btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus data pegawai ini?')">Delete</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @empty
                 <tr>
-                    <td colspan="6" class="text-center" style="padding: 20px; color: #64748b;">
+                    <td colspan="6" class="text-center" style="padding: 24px; color: #64748b;">
                         Belum ada data pegawai. Silakan klik tombol <strong>+ Tambah data Pegawai</strong>.
                     </td>
                 </tr>
