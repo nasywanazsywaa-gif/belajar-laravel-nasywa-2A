@@ -6,5 +6,6 @@
         <li><a href="/kalkulator/segitiga">Kalkulator Segitiga</a></li>
         <li><a href="/gallery">Gallery</a></li>
         <li><a href="/about">About</a></li>
+        <li><a href="/logout">Logout</a></li>
     </ul>
 </div>
