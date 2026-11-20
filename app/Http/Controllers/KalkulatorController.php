@@ -17,6 +17,11 @@ class KalkulatorController extends Controller
             $luas = 0.5 * $alas * $tinggi;
         }
 
-        return view('kalkulator.segitiga', compact('luas'));
+        $data = [
+            'judul' => 'Kalkulator Luas Segitiga',
+            'luas' => $luas,
+        ];
+
+        return view('kalkulator.segitiga', $data);
     }
 }
