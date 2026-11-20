@@ -190,3 +190,126 @@ body {
     color: #065f46;
     border-radius: 4px;
 }
+
+
+/* CRUD Pegawai Styling */
+.table-crud {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.table-crud th,
+.table-crud td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.table-crud th {
+    background-color: navy;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.table-crud tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.table-crud tr:hover {
+    background-color: #f1f5f9;
+}
+
+.btn-tambah {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-tambah:hover {
+    background-color: #15803d;
+}
+
+.btn-edit {
+    background-color: #f59e0b;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-edit:hover {
+    background-color: #d97706;
+}
+
+.btn-delete {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background-color: #dc2626;
+}
+
+.form-crud {
+    margin-top: 15px;
+}
+
+.table-form td {
+    padding: 8px 6px;
+    vertical-align: middle;
+}
+
+.table-form label {
+    font-weight: bold;
+    color: #334155;
+    font-size: 14px;
+}
+
+.table-form input[type="text"],
+.table-form textarea,
+.table-form select {
+    width: 280px;
+    padding: 7px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.table-form input[type="text"]:focus,
+.table-form textarea:focus,
+.table-form select:focus {
+    outline: none;
+    border-color: navy;
+}
+
+.btn-simpan {
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-simpan:hover {
+    background-color: #1e3a8a;
+}
